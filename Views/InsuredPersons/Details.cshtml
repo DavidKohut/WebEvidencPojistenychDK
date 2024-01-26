@@ -1,0 +1,75 @@
+﻿@model WebEvidencPojistenychDK.Models.InsuredPerson
+
+@{
+    ViewData["Title"] = "Detaily pojištěnce";
+}
+
+
+<div class="col-9">
+    <div class="mt-5">
+        <h5>Pojištěnec: @Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.Surname)</h5>
+        <hr />
+        <dl class="row mt-3">
+            <dt class = "col-2 mt-2">
+                Jméno:
+            </dt>
+            <dd class="col-10 mt-2">
+                @Html.DisplayFor(model => model.FirstName)
+            </dd>
+            <dt class="col-2 mt-2">
+                Příjmení:
+            </dt>
+            <dd class="col-10 mt-2">
+                @Html.DisplayFor(model => model.Surname)
+            </dd>
+            <dt class="col-2 mt-2">
+                Věk:
+            </dt>
+            <dd class="col-10 mt-2">
+                @Html.DisplayFor(model => model.Age)
+            </dd>
+            <dt class="col-2 mt-2">
+                E-mail:
+            </dt>
+            <dd class="col-10 mt-2">
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+            <dt class="col-2 mt-2">
+                Telefonní číslo:
+            </dt>
+            <dd class="col-10 mt-2">
+                @Html.DisplayFor(model => model.PhoneNumber)
+            </dd>
+            <dt class="col-2 mt-2">
+                Ulice:
+            </dt>
+            <dd class="col-10 mt-2">
+                @Html.DisplayFor(model => model.Street)
+            </dd>
+            <dt class="col-2 mt-2">
+                Město:
+            </dt>
+            <dd class="col-10 mt-2">
+                @Html.DisplayFor(model => model.City)
+            </dd>
+            <dt class="col-2 mt-2">
+                PSČ:
+            </dt>
+            <dd class="col-10 mt-2">
+                @Html.DisplayFor(model => model.PostalCode)
+            </dd>
+        </dl>
+    </div>
+    <div class="btn-group mt-3">
+        <a asp-action="Edit" asp-route-id="@Model?.Id">
+            <input type="submit" value="Upravit" class="btn btn-primary" />
+        </a>
+        <a asp-action="Delete" asp-route-id="@Model?.Id">
+            <input type="submit" value="Odstranit" class="btn btn-danger" />
+        </a>
+        <a asp-action="Index">
+            <input type="submit" value="Zpět" class="btn btn-secondary" />
+        </a>
+    </div>
+</div>
+

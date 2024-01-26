@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html lang="cz-cs">
+    <head class="body">
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="David Kohut" />
+        <title>E-Pojištění</title>
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
+        <!-- Prostor pro ikonu/logo <link rel="icon" type="image/x-icon" href="assets/favicon.ico" /> -->
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="~/css/site.css" rel="stylesheet" />
+        @await RenderSectionAsync("CSS", required: false)
+    </head>
+    <body>
+        <div class="d-flex" id="wrapper">
+            <!-- Sidebar-->
+            <div class="border-end" id="sidebar-wrapper">
+            <div class="sidebar-heading border-bottom sidebar-wrapper "><strong>E-Pojištění</strong></div>
+                <div class="list-group list-group-flush">
+
+                <a class="list-group-item list-group-item-action sidebar-wrapper p-3" asp-controller="InsuredPersons" asp-action="Index"><strong>Správa pojištěnců</strong></a>
+                <a class="list-group-item list-group-item-action sidebar-wrapper p-3" asp-controller="Insurances" asp-action="Index"><strong>Správa pojištění</strong></a>
+                <a class="list-group-item list-group-item-action  sidebar-wrapper p-3" asp-controller="Home" asp-action="Events"><strong>Události</strong></a>
+                <a class="list-group-item list-group-item-action sidebar-wrapper  p-3" asp-controller="Home" asp-action="AboutApp"><strong>O aplikaci</strong></a>
+                <a class="list-group-item list-group-item-action sidebar-wrapper  p-3" asp-controller="Home" asp-action="Contact"><strong>Kontakt</strong></a>
+                 
+                </div>
+            </div>
+            <!-- Page content wrapper-->
+            <div id="page-content-wrapper">
+                <!-- Top navigation-->
+                
+                <!-- Page content-->
+                <div class="container-fluid ">
+                    <h1 class="mt-4">@ViewData["Title"]</h1>
+                    
+                    <section  >
+                        @RenderBody()
+                    </section>
+                    
+                </div>
+            </div>
+        </div>
+        <footer>
+            Vytvořil David Kohut
+        </footer>
+        <script src="~/lib/jquery/dist/jquery.min.js"></script> 
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        <!-- Core theme JS-->
+        <script src="~/js/site.js"asp-append-version="true"></script>
+        @await RenderSectionAsync("Scripts", required: false)
+    </body>
+    
+</html>

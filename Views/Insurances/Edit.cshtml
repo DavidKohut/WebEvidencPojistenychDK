@@ -1,0 +1,51 @@
+﻿@model WebEvidencPojistenychDK.Models.Insurance
+
+@{
+    ViewData["Title"] = "Úprava pojištění";
+}
+
+
+<div class="mt-5">
+    <h5><strong>Pojištěnec: @Html.DisplayFor(model => model.InsuredPerson.FirstName) @Html.DisplayFor(model => model.InsuredPerson.Surname)</strong></h5>
+<hr />
+</div>
+<div class="row col-6">
+    <div>
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <div class="form-group col-4">
+            <input type="hidden" asp-for="InsuredPersonId"/>
+            <input type="hidden" asp-for="Id" />
+            
+           
+             </div>
+            <input type="hidden" asp-for="Id" />
+             <div class="form-group mt-3 col-3">
+                <label asp-for="Type" class="control-label"><strong>Druh pojištění</strong></label>
+                <input asp-for="Type" class="form-control" />
+                <span asp-validation-for="Type" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-3 col-4">
+                <label asp-for="Value" class="control-label"><strong>Pojistná částka (Kč)</strong></label>
+                <input asp-for="Value" class="form-control" />
+                <span asp-validation-for="Value" class="text-danger"></span>
+            </div>
+            <div >
+                <dl class="btn-group mt-3">
+                    <dt>
+                        <input type="submit" value="Uložit" class="btn btn-primary" />
+                    </dt>
+                    <dd>
+                        <a asp-action="Details" asp-controller="Insurances" asp-route-id="@Model.Id">
+                            <input type="button" value="Zpět" class="btn btn-secondary " />
+                        </a>
+                    </dd>
+                </dl>
+            </div>
+        </form>           
+    </div>
+</div>
+        
+
+

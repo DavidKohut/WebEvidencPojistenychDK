@@ -1,0 +1,40 @@
+﻿@model WebEvidencPojistenychDK.Models.Insurance
+
+@{
+    ViewData["Title"] = "Detaily pojištění";
+}
+
+
+<div class="col-9">
+<div class="mt-5">
+    <h5><strong>Pojištěnec: @Html.DisplayFor(model => model.InsuredPerson.FirstName) @Html.DisplayFor(model => model.InsuredPerson.Surname)</strong></h5>
+    <hr />
+</div>
+<div>
+    <dl class="row mt-3">
+        <dt class = "col-2 mt-2">
+           Druh pojištění
+        </dt>
+        <dd class = "col-10 mt-2">
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+        <dt class = "col-2 mt-2">
+            <p>Pojistná částka</p>
+        </dt>
+        <dd class = "col-10 mt-2">
+            @Html.DisplayFor(model => model.Value) Kč
+        </dd>
+    </dl>
+</div>
+<div class="btn-group mt-3">
+    <a asp-action="Edit" asp-route-id="@Model?.Id">
+        <input type="submit" value="Upravit" class="btn btn-primary" />
+    </a>
+    <a asp-action="Delete" asp-route-id="@Model?.Id">
+        <input type="submit" value="Odstranit" class="btn btn-danger" />
+    </a>
+    <a asp-action="Index"> 
+        <input type="submit" value="Zpět" class="btn btn-secondary" />
+    </a>
+</div>
+</div>

@@ -1,0 +1,53 @@
+﻿@model WebEvidencPojistenychDK.Models.Insurance
+
+@{
+	ViewData["Title"] = "Vytvoření nového pojištění";
+}
+
+
+
+<div class="col-9">
+
+<hr />
+<div class="row">
+	<div class="col-6">
+        <form asp-action="Create">
+
+			<div class="form-group col-4">
+				<label asp-for="InsuredPersonId" class="control-label"><strong>Pojištěný</strong></label>
+				<select asp-for="InsuredPersonId" asp-items="ViewBag.ListOfInsuredPeople" class="form-control">
+				</select>
+				<span asp-validation-for="InsuredPersonId" class="text-danger"></span>
+			</div>
+			
+			<div class="form-group col-3 mt-3">
+				<label asp-for="Type"><strong>Druh pojištění</strong></label>
+				<input asp-for="Type" class="form-control" />
+				<span asp-validation-for="Type" class="text-danger"></span>
+			</div>
+			<div class="form-group col-5 mt-3">
+				<label asp-for="Value"><strong>Pojistná částka (Kč)</strong></label>
+				<input asp-for="Value" class="form-control" />
+				<span asp-validation-for="Value" class="text-danger"></span>
+			</div>
+			<div class="btn-group mt-3">
+				
+					<dt>
+						<input type="submit" value="Vytvořit" class="btn btn-primary" />
+					</dt>
+					<dd>
+						<a asp-action="Index">
+							<input type="button" value="Zpět" class="btn btn-secondary" />
+						</a>
+					</dd>
+				
+				</div>
+		</form>
+	</div>
+</div>
+</div>
+
+
+ @section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+} 
