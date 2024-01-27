@@ -33,7 +33,7 @@ namespace WebEvidencPojistenychDK.Controllers
                 return NotFound();
             }
 
-            var insuredPerson = await _context.InsuredPerson
+            var insuredPerson = await _context.InsuredPerson.Include(i => i.Insurances)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (insuredPerson == null)
             {

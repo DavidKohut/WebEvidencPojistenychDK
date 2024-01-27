@@ -17,7 +17,9 @@ namespace WebEvidencPojistenychDK.Models
         public int Value { get; set; } = 0;
 
         [ForeignKey("InsuredPersonId")]
-        public virtual InsuredPerson? InsuredPerson { get; set; } //Přidaný otazník třeba nmusí existovat
+        public InsuredPerson? InsuredPerson { get; set; } 
+
+         
 
 		public override string ToString()
 		{
